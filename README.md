@@ -1,164 +1,422 @@
-# InternHub — Internship Management Platform
+# InternHub - AI Powered Internship Management Platform
 
-> Complete Product Design Case Study + Working Prototype  
-> Built for a **Product Thinking & Design Challenge**
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js" />
+  <img src="https://img.shields.io/badge/Node.js-20-green?style=for-the-badge&logo=node.js" />
+  <img src="https://img.shields.io/badge/MongoDB-Database-brightgreen?style=for-the-badge&logo=mongodb" />
+  <img src="https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript" />
+  <img src="https://img.shields.io/badge/Express.js-Backend-lightgrey?style=for-the-badge&logo=express" />
+</p>
+
+<p align="center">
+  A modern full-stack Internship Management Platform that streamlines internship discovery, application tracking, recruiter workflows, and administrative management through a scalable and user-friendly architecture.
+</p>
 
 ---
 
-## 🚀 Quick Start (Demo Mode — No Backend Needed)
+#  Overview
+
+InternHub is a comprehensive Internship Management Platform designed to bridge the gap between students, recruiters, and administrators.
+
+The platform simplifies the internship hiring lifecycle by providing:
+
+* Internship discovery and application management
+* Recruiter hiring workflows
+* Student profile management
+* Real-time notifications
+* Dashboard analytics
+* Role-based authentication and authorization
+
+Built using modern web technologies with scalability, security, and user experience in mind.
+
+---
+
+#  Problem Statement
+
+Traditional internship placement systems often suffer from:
+
+* Manual application tracking
+* Poor communication between stakeholders
+* Lack of centralized management
+* Inefficient candidate screening
+* Limited visibility into recruitment progress
+
+InternHub addresses these challenges through a centralized and intelligent internship management ecosystem.
+
+---
+
+#  Features
+
+##  Student Portal
+
+* Secure Authentication
+* Student Profile Management
+* Internship Search & Discovery
+* Internship Applications
+* Application Tracking
+* Notification Center
+* Profile Strength Monitoring
+
+---
+
+##  Recruiter Portal
+
+* Company Registration
+* Internship Posting
+* Applicant Management
+* Candidate Shortlisting
+* Recruitment Pipeline Management
+* Internship Analytics
+
+---
+
+##  Admin Dashboard
+
+* User Management
+* Recruiter Approval Workflow
+* Platform Monitoring
+* Internship Statistics
+* Dashboard Analytics
+* System Health Overview
+
+---
+
+##  Security Features
+
+* JWT Authentication
+* Role-Based Access Control (RBAC)
+* Protected Routes
+* Secure API Access
+* Environment Variable Configuration
+
+---
+
+#  System Architecture
+
+```text
+Frontend (Next.js + TypeScript)
+                │
+                ▼
+REST API Layer (Express.js)
+                │
+                ▼
+Authentication Layer (JWT)
+                │
+                ▼
+MongoDB Database
+                │
+ ┌──────────────┼──────────────┐
+ │              │              │
+ ▼              ▼              ▼
+Users      Internships    Applications
+```
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
+
+* Next.js 16
+* React
+* TypeScript
+* Tailwind CSS
+* App Router
+* Turbopack
+
+## Backend
+
+* Node.js
+* Express.js
+* TypeScript
+* JWT Authentication
+
+## Database
+
+* MongoDB
+* Mongoose
+
+## Development Tools
+
+* ts-node-dev
+* Concurrently
+* ESLint
+
+---
+
+#  Project Structure
+
+```text
+internhub/
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── next.config.ts
+│
+├── backend/
+│   ├── src/
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── middleware/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   └── server.ts
+│   │
+│   ├── package.json
+│   └── tsconfig.json
+│
+├── screenshots/
+│
+├── README.md
+│
+└── .env
+```
+
+---
+
+#  Screenshots
+
+##  Landing Page
+
+![Landing Page](screenshots/landing-page.png)
+
+---
+
+##  Login Page
+
+![Login Page](screenshots/login-page.png)
+
+---
+
+##  Student Dashboard
+
+![Student Dashboard](screenshots/student-dashboard.png)
+
+---
+
+##  Internship Listings
+
+![Internship Listings](screenshots/internships.png)
+
+---
+
+## Recruiter Dashboard
+
+![Recruiter Dashboard](screenshots/recruiter-dashboard.png)
+
+---
+
+##  Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+---
+
+##  Notifications Center
+
+![Notifications](screenshots/notifications.png)
+
+---
+
+##  Analytics Dashboard
+
+![Analytics Dashboard](screenshots/analytics.png)
+
+---
+
+#  Installation
+
+## Clone Repository
 
 ```bash
-# 1. Install frontend dependencies
+git clone https://github.com/yourusername/internhub.git
+
+cd internhub
+```
+
+---
+
+## Install Dependencies
+
+### Root Project
+
+```bash
+npm install
+```
+
+### Backend
+
+```bash
+cd backend
+npm install
+```
+
+### Frontend
+
+```bash
 cd frontend
 npm install
+```
 
-# 2. Run the frontend
+---
+
+# 🔧 Environment Variables
+
+Create a `.env` file inside the backend directory.
+
+```env
+MONGODB_URI=mongodb://127.0.0.1:27017/internship-management
+
+JWT_SECRET=internship_platform_super_secret_key_2024
+JWT_EXPIRES_IN=7d
+
+PORT=5000
+
+NODE_ENV=development
+
+FRONTEND_URL=http://localhost:3000
+```
+
+---
+
+#  Running the Application
+
+## Start MongoDB
+
+Ensure MongoDB is running locally.
+
+```bash
+mongod
+```
+
+---
+
+## Start Backend
+
+```bash
+cd backend
+
 npm run dev
+```
 
-# 3. Open in browser
+Backend:
+
+```text
+http://localhost:5000
+```
+
+API:
+
+```text
+http://localhost:5000/api
+```
+
+---
+
+## Start Frontend
+
+```bash
+cd frontend
+
+npm run dev
+```
+
+Frontend:
+
+```text
 http://localhost:3000
 ```
 
-Click any **Demo** button on the landing page to instantly explore all three role dashboards with realistic mock data.
-
 ---
 
-## 🖥️ Full Stack Setup (Local MongoDB + Compass)
+#  API Modules
 
-```bash
-# 1. Install all dependencies
-npm run install:all
+## Authentication
 
-# 2. Seed the local MongoDB database
-npm run seed
-
-# 3. Start both servers concurrently
-npm run dev
-```
-
-- **Frontend**: `http://localhost:3000`
-- **Backend API**: `http://localhost:5000/api`
-- **MongoDB Compass**: Connect to `mongodb://127.0.0.1:27017/internship-management` to inspect all collection data!
-
----
-
-## 📋 Pages & Routes
-
-| Route | Description |
-|-------|-------------|
-| `/` | Landing page with search, stats, demo login |
-| `/internships` | Browse all internships with filters |
-| `/internships/[id]` | Internship detail + apply |
-| `/auth/login` | Login with role demo buttons |
-| `/auth/register` | Register as student or recruiter |
-| `/dashboard/student` | Student dashboard (5 tabs) |
-| `/dashboard/recruiter` | Recruiter portal (4 tabs) |
-| `/dashboard/admin` | Admin panel (4 tabs) |
-| `/case-study` | Interactive 8-slide product presentation |
-
----
-
-## 🎯 Feature Highlights
-
-### Student Dashboard
-- **Gamified Profile** — Profile strength % + achievement badges
-- **Application Tracker** — Live status pipeline (Applied → Offered)
-- **Internship Search** — Filter by skill, location, type, stipend
-- **Notifications** — All status updates in one drawer
-
-### Recruiter Dashboard
-- **Kanban Pipeline** — Visual applicant funnel
-- **Applicant Review** — Score, notes, interview scheduling
-- **Post Internship** — Form with live preview card
-- **Collaboration** — Recruiter notes per applicant
-
-### Admin Dashboard
-- **Company Approvals** — Click-to-approve pending recruiters
-- **User Management** — Search, filter, remove users
-- **Analytics** — Bar charts, funnel charts, category breakdown
-- **Export Reports** — One-click mock PDF export
-
-### Case Study Slides
-1. Problem Statement
-2. User Personas
-3. Solution Overview
-4. User Journey Maps
-5. Feature Set
-6. Database ER Diagram
-7. Tech Stack
-8. MVP Roadmap
-
----
-
-## 🛠️ Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Frontend | Next.js 15, TypeScript, Tailwind CSS, App Router |
-| Backend | Node.js, Express.js, TypeScript |
-| Database | MongoDB Atlas + Mongoose |
-| Auth | JWT + Role-Based Access Control |
-| Mock Mode | In-memory fallback (no DB needed for demo) |
-| Deployment | Vercel (FE) + Render (BE) |
-
----
-
-## 🗄️ Database Models
-
-- **User** — Base auth (Student / Recruiter / Admin)
-- **Student** — Profile, skills, badges, profileStrength
-- **Company** — Company info, isApproved flag
-- **Internship** — Job details, filters, openings
-- **Application** — Status pipeline, recruiter notes/score
-- **Notification** — Event-driven alerts per user
-
----
-
-## 📡 API Endpoints
-
-```
+```http
 POST /api/auth/register
 POST /api/auth/login
 GET  /api/auth/me
-
-GET  /api/internships          (public, supports filters)
-GET  /api/internships/:id
-POST /api/internships          (recruiter only)
-PUT  /api/internships/:id
-DELETE /api/internships/:id
-
-GET  /api/student/profile      (student)
-PUT  /api/student/profile
-GET  /api/student/applications
-
-POST /api/applications         (student)
-GET  /api/applications         (recruiter/admin)
-PUT  /api/applications/:id/status
-
-GET  /api/admin/stats          (admin)
-GET  /api/admin/users
-DELETE /api/admin/users/:id
-GET  /api/admin/companies/pending
-PUT  /api/admin/companies/:id/approve
-GET  /api/admin/analytics
-
-GET  /api/notifications
-PUT  /api/notifications/:id/read
-PUT  /api/notifications/read-all
 ```
 
 ---
 
-## 🏆 Evaluation Criteria
+## Student
 
-| Criterion | Implementation |
-|-----------|---------------|
-| Product Thinking | Every feature solves a documented user pain point |
-| Creativity | Gamified profiles, achievement badges, live preview, demo mode |
-| Communication | 8-slide interactive case study presentation |
-| Collaboration | Recruiter notes, scores, interview scheduling |
-| Leadership | Admin analytics, approval workflow, platform monitoring |
+```http
+GET  /api/student/profile
+PUT  /api/student/profile
+GET  /api/student/applications
+```
 
 ---
 
-Built with ❤️ for the Xebia Internship Design Challenge
+## Internships
+
+```http
+GET    /api/internships
+GET    /api/internships/:id
+POST   /api/internships
+PUT    /api/internships/:id
+DELETE /api/internships/:id
+```
+
+---
+
+## Applications
+
+```http
+POST /api/applications
+GET  /api/applications
+PUT  /api/applications/:id/status
+```
+
+---
+
+## Admin
+
+```http
+GET    /api/admin/stats
+GET    /api/admin/users
+DELETE /api/admin/users/:id
+GET    /api/admin/analytics
+```
+
+---
+
+#  Future Enhancements
+
+* AI Resume Analysis
+* Smart Candidate Matching
+* AI Interview Preparation
+* Resume Builder
+* Real-Time Chat
+* Email Notifications
+* Mobile Application
+* AI Internship Recommendation Engine
+
+---
+
+#  Developed For
+
+### Xebia Internship Program
+
+InternHub demonstrates:
+
+* Full-Stack Development
+* REST API Design
+* Authentication & Authorization
+* Database Management
+* Scalable Architecture
+* Modern UI/UX Design
+* Product Thinking & System Design
+
+---
+
+#  License
+
+This project is developed for educational and internship evaluation purposes.
+
+© 2026 InternHub. All Rights Reserved.
