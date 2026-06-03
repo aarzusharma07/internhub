@@ -113,7 +113,7 @@ Users      Internships    Applications
 
 ---
 
-# 🛠️ Tech Stack
+## Tech Stack
 
 ## Frontend
 
