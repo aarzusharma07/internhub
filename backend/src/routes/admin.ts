@@ -1,0 +1,12 @@
+import { Router } from 'express';
+import { getDashboardStats, getAllUsers, deleteUser, getPendingCompanies, approveCompany, getAnalytics } from '../controllers/adminController';
+import { protect, authorize } from '../middleware/auth';
+const router = Router();
+router.use(protect, authorize('admin'));
+router.get('/stats', getDashboardStats);
+router.get('/users', getAllUsers);
+router.delete('/users/:id', deleteUser);
+router.get('/companies/pending', getPendingCompanies);
+router.put('/companies/:id/approve', approveCompany);
+router.get('/analytics', getAnalytics);
+export default router;

@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import { getInternships, getInternshipById, createInternship, updateInternship, deleteInternship } from '../controllers/internshipController';
+import { protect, authorize } from '../middleware/auth';
+const router = Router();
+router.get('/', getInternships);
+router.get('/:id', getInternshipById);
+router.post('/', protect, authorize('recruiter'), createInternship);
+router.put('/:id', protect, authorize('recruiter'), updateInternship);
+router.delete('/:id', protect, authorize('recruiter'), deleteInternship);
+export default router;
